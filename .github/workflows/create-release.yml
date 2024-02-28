@@ -20,4 +20,7 @@ jobs:
       #   with:
       #     body_path: ${{ github.workspace }}-CHANGELOG.md
       - run: echo Released ${{ github.event.workflow_run.conclusion }}
-      - run: echo Released ${{ github.ref }}
+      - run: echo Released ${{ github.event.workflow_run.head_sha }}
+      - run: echo Released ${{ github.event.workflow_run.head_branch }}
+      - run: echo Released ${{ github.event.workflow_run.head_commit }}
+      - run: echo Released ${{ github.event.workflow_run.event }}
