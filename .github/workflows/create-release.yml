@@ -12,6 +12,8 @@ jobs:
     outputs:
       status: ${{ steps.check.conclusion }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
       - id: check
         name: Verify that the ref is a tag (and not just a branch starting with "v")
         run: git show-ref --verify refs/tags/${{ github.event.workflow_run.head_branch }}
