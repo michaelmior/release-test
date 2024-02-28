@@ -17,6 +17,7 @@ jobs:
         run: git show-ref --verify refs/tags/${{ github.event.workflow_run.head_branch }}
 
   release:
+    runs-on: ubuntu-latest
     needs: check
       if needs.check.outputs.status == 'success'
     steps:
